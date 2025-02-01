@@ -127,7 +127,7 @@ class Projects extends StatelessWidget {
               TextBody(text: text1),
               SizedBox(
                   width: MediaQuery.of(context).size.width * 0.6,
-                  child: Expanded(child: TextBody(text: text2))),
+                  child: TextBody(text: text2)),
               Row(
                 children: [
                   TextButton.icon(

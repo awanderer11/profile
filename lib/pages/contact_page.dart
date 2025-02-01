@@ -41,7 +41,7 @@ class ContactPage extends StatelessWidget {
                 text1: "Phone number: +6281245223654",
                 text2: "Email: alfkrnwn@gmail.com",
                 text3: "Email: alifkurniawan11@gmail.com",
-                text4: "Linkedin: linkedin.com/in/alif-kurniawan-373aa81b6",
+                text4: "Linkedin: linkedin.com/in/alfkrnwn",
                 text5: "Github: github.com/awanderer11",
                 text6: "Gitlab:  gitlab.com/alfkrnwn",
               ),

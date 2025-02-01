@@ -41,8 +41,7 @@ class Footer extends StatelessWidget {
               InkWell(
                 onTap: () async {
                   if (!await launchUrl(
-                      Uri.parse(
-                          "https://www.linkedin.com/in/alif-kurniawan-373aa81b6"),
+                      Uri.parse("https://www.linkedin.com/in/alfkrnwn"),
                       mode: LaunchMode.externalApplication)) {
                     throw 'Could not launch url!';
                   }
