@@ -115,7 +115,7 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +125,9 @@ class Projects extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextBody(text: text1),
-              TextBody(text: text2),
+              SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.6,
+                  child: Expanded(child: TextBody(text: text2))),
               Row(
                 children: [
                   TextButton.icon(

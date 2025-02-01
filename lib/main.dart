@@ -58,6 +58,8 @@ class MyApp extends StatelessWidget {
             TargetPlatform.linux: NoAnimationPageTransitionsBuilder(),
             TargetPlatform.macOS: NoAnimationPageTransitionsBuilder(),
             TargetPlatform.windows: NoAnimationPageTransitionsBuilder(),
+            TargetPlatform.android: NoAnimationPageTransitionsBuilder(),
+            TargetPlatform.iOS: NoAnimationPageTransitionsBuilder(),
           },
         ),
       ),

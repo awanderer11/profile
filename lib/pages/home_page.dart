@@ -67,7 +67,19 @@ class MyWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.3),
+          Container(
+            height: 150,
+            width: 150,
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(100)),
+                border: Border.all(color: Colors.white)),
+            child: const CircleAvatar(
+              radius: 100,
+              backgroundColor: secondary,
+              backgroundImage: AssetImage("assets/png/alif.png"),
+            ),
+          ),
+          const SizedBox(height: 16),
           const Align(
             alignment: Alignment.center,
             child: Text(
@@ -79,6 +91,7 @@ class MyWidget extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               "Software engineer | Mobile app developer | Flutter developer",
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: textPrimary),
             ),
           ),
