@@ -107,9 +107,7 @@ class CareerWidget extends StatelessWidget {
               TextBody(text: text1),
               TextBody(text: text2),
               TextBody(text: text3),
-              SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: TextBody(text: text4)),
+              TextBody(text: text4),
             ],
           )
         ],

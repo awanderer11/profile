@@ -125,9 +125,7 @@ class Projects extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextBody(text: text1),
-              SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: TextBody(text: text2)),
+              TextBody(text: text2),
               Row(
                 children: [
                   TextButton.icon(
