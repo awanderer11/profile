@@ -6,6 +6,7 @@ import 'package:profile/pages/career_page.dart';
 import 'package:profile/pages/contact_page.dart';
 import 'package:profile/pages/project_page.dart';
 import 'package:profile/pages/summary_page.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -16,24 +17,29 @@ class Header extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 30),
+          margin: !ResponsiveBreakpoints.of(context).isMobile
+              ? const EdgeInsets.all(16)
+              : EdgeInsets.zero,
           child: Row(
             children: [
-              InkWell(
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                splashColor: Colors.transparent,
-                onTap: () => Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    Navigator.defaultRouteName,
-                    ModalRoute.withName(Navigator.defaultRouteName)),
-                child: Text("alfkrnwn",
+              if (!ResponsiveBreakpoints.of(context).isMobile)
+                InkWell(
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  onTap: () => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      Navigator.defaultRouteName,
+                      ModalRoute.withName(Navigator.defaultRouteName)),
+                  child: Text(
+                    "alfkrnwn",
                     style: GoogleFonts.exo2(
                         color: textPrimary,
                         fontSize: 30,
                         letterSpacing: 3,
-                        fontWeight: FontWeight.w500)),
-              ),
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
               Flexible(
                 child: Container(
                   alignment: Alignment.centerRight,
