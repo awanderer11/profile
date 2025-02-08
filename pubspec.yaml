@@ -24,4 +24,5 @@ flutter:
     - assets/
     - assets/png/
     - assets/svg/
+    - assets/projects/
   uses-material-design: true

@@ -8,7 +8,7 @@ import 'package:profile/pages/about_page.dart';
 import 'package:profile/pages/career_page.dart';
 import 'package:profile/pages/contact_page.dart';
 import 'package:profile/pages/home_page.dart';
-import 'package:profile/pages/project_page.dart';
+import 'package:profile/pages/projects/project_page.dart';
 import 'package:profile/pages/summary_page.dart';
 import 'package:profile/utils/no_animation_page_transitions_builder.dart';
 import 'package:responsive_framework/responsive_framework.dart';
