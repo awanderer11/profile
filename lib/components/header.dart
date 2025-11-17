@@ -75,7 +75,7 @@ class Header extends StatelessWidget {
                         onPressed: () =>
                             Navigator.pushNamed(context, ProjectPage.name),
                         style: menuButtonStyle,
-                        child: const Text("PROJECT"),
+                        child: const Text("PORTOFOLIO"),
                       ),
                       TextButton(
                         onPressed: () =>

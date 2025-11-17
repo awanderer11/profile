@@ -11,7 +11,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectPage extends StatelessWidget {
-  static const String name = 'project';
+  static const String name = 'portofolio';
 
   const ProjectPage({super.key});
 
@@ -27,7 +27,7 @@ class ProjectPage extends StatelessWidget {
               child: Container(
                 margin: marginBottom12,
                 child: const Text(
-                  "PROJECT",
+                  "Portofolio Projects",
                   style: TextStyle(fontSize: 20, color: Colors.amber),
                 ),
               ),
@@ -46,7 +46,7 @@ class ProjectPage extends StatelessWidget {
               title: "Presilia",
               description:
                   "Description: Digital reporting for sales and manager approval.",
-              imageUrl: "assets/projects/presilia.jpg",
+              imageUrl: "assets/projects/presilia.png",
               link:
                   'https://play.google.com/store/apps/details?id=ish.co.id.presilia&hl=en-ID',
               link2: "https://apps.apple.com/us/app/presillia/id6449664227",
@@ -91,19 +91,21 @@ class ProjectPage extends StatelessWidget {
                 link:
                     'https://play.google.com/store/apps/details?id=app.dairyfood.sales&hl=en-ID'),
             divider,
-            const Projects(
-                text1: "Grocee Grow",
-                text2:
+            const ListItem(
+                title: "Grocee Grow",
+                imageUrl: "assets/projects/grocee.png",
+                description:
                     "Description: Application used for owners to manage their merchant.",
                 link:
                     'https://play.google.com/store/apps/details?id=id.grocee.grow&hl=en-ID'),
             divider,
-            const Projects(
-                text1: "Grocee Mitra",
-                text2:
-                    "Description: Mitra or Merchants are applications used to manage orders.",
+            const ListItem(
+                title: "Grocee Mitra",
+                imageUrl: "assets/projects/grocee.png",
+                description:
+                    "Description: Application used for owners to manage their merchant.",
                 link:
-                    'https://play.google.com/store/apps/details?id=id.grocee.mitra&hl=en-ID'),
+                    'https://play.google.com/store/apps/details?id=id.grocee.grow&hl=en-ID'),
           ].toMaxWidthSliver(),
           SliverFillRemaining(
             hasScrollBody: false,
