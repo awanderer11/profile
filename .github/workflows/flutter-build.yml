@@ -43,4 +43,4 @@ jobs:
             --token $VERCEL_TOKEN \
             --cwd build/web \
             --confirm \
-            --name my-flutter-web-project
+            --name alfkrnwn
