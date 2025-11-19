@@ -24,10 +24,6 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (imageUrl != null)
-          ImageWrapper(
-            image: imageUrl!,
-          ),
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
@@ -51,49 +47,50 @@ class ListItem extends StatelessWidget {
           ),
         Align(
           alignment: Alignment.centerLeft,
-          child: Container(
-            margin: marginBottom24,
-            child: Row(
-              children: [
-                TextButton.icon(
-                  style: TextButton.styleFrom(foregroundColor: Colors.white),
-                  onPressed: link2 == ""
-                      ? () {}
-                      : () async {
-                          if (!await launchUrl(Uri.parse(link2!),
-                              mode: LaunchMode.externalApplication)) {
-                            throw 'Could not launch url!';
-                          }
-                        },
-                  icon: SvgPicture.asset(
-                    'assets/svg/appstore.svg',
-                    height: 20,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.amber, BlendMode.srcIn),
-                  ),
-                  label: const Text("Appstore"),
+          child: Row(
+            children: [
+              TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: Colors.white),
+                onPressed: link2 == ""
+                    ? () {}
+                    : () async {
+                        if (!await launchUrl(Uri.parse(link2!),
+                            mode: LaunchMode.externalApplication)) {
+                          throw 'Could not launch url!';
+                        }
+                      },
+                icon: SvgPicture.asset(
+                  'assets/svg/appstore.svg',
+                  height: 20,
+                  colorFilter:
+                      const ColorFilter.mode(Colors.amber, BlendMode.srcIn),
                 ),
-                const SizedBox(width: 16),
-                TextButton.icon(
-                  style: TextButton.styleFrom(foregroundColor: Colors.white),
-                  onPressed: () async {
-                    if (!await launchUrl(Uri.parse(link!),
-                        mode: LaunchMode.externalApplication)) {
-                      throw 'Could not launch url!';
-                    }
-                  },
-                  icon: SvgPicture.asset(
-                    'assets/svg/playstore.svg',
-                    height: 20,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.amber, BlendMode.srcIn),
-                  ),
-                  label: const Text("Playstore"),
+                label: const Text("Appstore"),
+              ),
+              const SizedBox(width: 16),
+              TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: Colors.white),
+                onPressed: () async {
+                  if (!await launchUrl(Uri.parse(link!),
+                      mode: LaunchMode.externalApplication)) {
+                    throw 'Could not launch url!';
+                  }
+                },
+                icon: SvgPicture.asset(
+                  'assets/svg/playstore.svg',
+                  height: 20,
+                  colorFilter:
+                      const ColorFilter.mode(Colors.amber, BlendMode.srcIn),
                 ),
-              ],
-            ),
+                label: const Text("Playstore"),
+              ),
+            ],
           ),
         ),
+        if (imageUrl != null)
+          ImageWrapper(
+            image: imageUrl!,
+          ),
       ],
     );
   }

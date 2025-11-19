@@ -76,21 +76,6 @@ class ProjectPage extends StatelessWidget {
               link:
                   'https://play.google.com/store/apps/details?id=id.sintesys.sintesys_sharp&hl=en-ID',
             ),
-            divider,
-            const Projects(
-                text1: "Sagupopeda",
-                text2:
-                    "Description: Application to provide solutions to regional leadership activities.",
-                link:
-                    'https://play.google.com/store/apps/details?id=com.bualawalabs.sagu_popeda&hl=en-ID'),
-            divider,
-            const Projects(
-                text1: "Dairyfood Sales Team",
-                text2:
-                    "Description: Application used for sales to view order data.",
-                link:
-                    'https://play.google.com/store/apps/details?id=app.dairyfood.sales&hl=en-ID'),
-            divider,
             const ListItem(
                 title: "Grocee Grow",
                 imageUrl: "assets/projects/grocee.png",
@@ -106,6 +91,21 @@ class ProjectPage extends StatelessWidget {
                     "Description: Application used for owners to manage their merchant.",
                 link:
                     'https://play.google.com/store/apps/details?id=id.grocee.grow&hl=en-ID'),
+            divider,
+            const Projects(
+                text1: "Sagupopeda",
+                text2:
+                    "Description: Application to provide solutions to regional leadership activities.",
+                link:
+                    'https://play.google.com/store/apps/details?id=com.bualawalabs.sagu_popeda&hl=en-ID'),
+            divider,
+            const Projects(
+                text1: "Dairyfood Sales Team",
+                text2:
+                    "Description: Application used for sales to view order data.",
+                link:
+                    'https://play.google.com/store/apps/details?id=app.dairyfood.sales&hl=en-ID'),
+            divider,
           ].toMaxWidthSliver(),
           SliverFillRemaining(
             hasScrollBody: false,
