@@ -37,13 +37,10 @@ jobs:
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           # Pindah ke folder build output Flutter Web
           cd build/web
 
-          # Deploy ke project yang sudah ada di Vercel
-          vercel --prod \
-            --yes \
-            --token $VERCEL_TOKEN \
-            --confirm \
-            --project alfkrnwn
+          # Deploy ke project tetap dengan Project ID
+          vercel --prod --yes --token $VERCEL_TOKEN --project $VERCEL_PROJECT_ID
