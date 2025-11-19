@@ -6,29 +6,41 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # 2. Setup Flutter
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.24.3"
+          channel: stable
 
+      # 3. Install dependencies
       - name: Install dependencies
-        run: |
-          flutter pub get
+        run: flutter pub get
 
+      # 4. Build Flutter Web
       - name: Build Flutter Web
-        run: |
-          flutter build web
+        run: flutter build web --release
 
+      # 5. Install Vercel CLI
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      # 6. Deploy to Vercel
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          curl -sL https://vercel.com/download | bash
-          vercel --prod --token $VERCEL_TOKEN
+          vercel --prod \
+            --yes \
+            --token $VERCEL_TOKEN \
+            --cwd build/web \
+            --confirm \
+            --name my-flutter-web-project
