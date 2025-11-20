@@ -93,19 +93,18 @@ class ProjectPage extends StatelessWidget {
                     'https://play.google.com/store/apps/details?id=id.grocee.grow&hl=en-ID'),
             divider,
             const Projects(
-                text1: "Sagupopeda",
-                text2:
-                    "Description: Application to provide solutions to regional leadership activities.",
-                link:
-                    'https://play.google.com/store/apps/details?id=com.bualawalabs.sagu_popeda&hl=en-ID'),
-            divider,
-            const Projects(
                 text1: "Dairyfood Sales Team",
                 text2:
                     "Description: Application used for sales to view order data.",
                 link:
                     'https://play.google.com/store/apps/details?id=app.dairyfood.sales&hl=en-ID'),
             divider,
+            const Projects(
+                text1: "Sagupopeda",
+                text2:
+                    "Description: Application to provide solutions to regional leadership activities.",
+                link:
+                    'https://play.google.com/store/apps/details?id=com.bualawalabs.sagu_popeda&hl=en-ID'),
           ].toMaxWidthSliver(),
           SliverFillRemaining(
             hasScrollBody: false,
