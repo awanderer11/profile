@@ -92,9 +92,10 @@ class ProjectPage extends StatelessWidget {
                 link:
                     'https://play.google.com/store/apps/details?id=id.grocee.grow&hl=en-ID'),
             divider,
-            const Projects(
-                text1: "Dairyfood Sales Team",
-                text2:
+            const ListItem(
+                title: "Dairyfood Sales Team",
+                imageUrl: "assets/projects/dairyfood.png",
+                description:
                     "Description: Application used for sales to view order data.",
                 link:
                     'https://play.google.com/store/apps/details?id=app.dairyfood.sales&hl=en-ID'),
