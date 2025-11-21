@@ -15,53 +15,50 @@ class CareerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<CareerItem> careerItems = [
+      CareerItem(
+        title: "Development Ops. Mobile Platform Officer",
+        company: "Infomedia Solusi Humanika (ISH) · Fulltime",
+        period: "Apr 2024 - Now",
+        address:
+            "Graha ISH, Gedung WorthCase, Jl. RS. Fatmawati Raya No.75, RT.6/RW.5, Cipete Utara, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12150",
+      ),
+      CareerItem(
+        title: "Frontend Developer",
+        company: "Grocee Teknologi Indonesia (Grocee) · Fulltime",
+        period: "Sep 2020 - Mar 2024",
+        address:
+            "Jl. Sungai Saddang Baru No.12C, Maricaya Baru, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90143",
+      ),
+      CareerItem(
+        title: "Backend Developer & Frontend Developer",
+        company: "Amtek (INBOX) · Fulltime",
+        period: "May 2020 – Sep 2020",
+        address:
+            "Jl. Boulevard Ruko Topaz No.F/36, Masale, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan 90231",
+      ),
+      CareerItem(
+        title: "Fullstack Web Developer",
+        company: "TRIBOX Indonesia (TRIBOX) · Fulltime",
+        period: "Sep 2019 – May 2020",
+        address:
+            "Jl. Monginsidi Baru No.40, Rappocini, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90222",
+      ),
+    ];
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           ...[
             const Header(),
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                margin: marginBottom12,
-                child: const Text(
-                  "CAREER",
-                  style: TextStyle(fontSize: 20, color: Colors.amber),
-                ),
-              ),
-            ),
+            const CenterTitle(title: "CAREER"),
             divider,
-            const CareerWidget(
-              text1: "Development Ops. Mobile Platform Officer",
-              text2: "Infomedia Solusi Humanika (ISH) · Fulltime",
-              text3: "Apr 2024 - Now",
-              text4:
-                  "Graha ISH, Gedung WorthCase, Jl. RS. Fatmawati Raya No.75, RT.6/RW.5, Cipete Utara, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12150",
-            ),
-            divider,
-            const CareerWidget(
-              text1: "Frontend Developer",
-              text2: "Grocee Teknologi Indonesia (Grocee) · Fulltime",
-              text3: "Sep 2020 - Mar 2024",
-              text4:
-                  "Jl. Sungai Saddang Baru No.12C, Maricaya Baru, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90143",
-            ),
-            divider,
-            const CareerWidget(
-              text1: "Backend Developer & Frontend Developer",
-              text2: "Amtek (INBOX) · Fulltime",
-              text3: "May 2020 – Sep 2020",
-              text4:
-                  "Jl. Boulevard Ruko Topaz No.F/36, Masale, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan 90231",
-            ),
-            divider,
-            const CareerWidget(
-              text1: "Fullstack Web Developer",
-              text2: "TRIBOX Indonesia (TRIBOX) · Fulltime",
-              text3: "Sep 2019 – May 2020",
-              text4:
-                  "Jl. Monginsidi Baru No.40, Rappocini, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90222",
-            ),
+            ...careerItems.map((item) => Column(
+                  children: [
+                    CareerCard(item: item),
+                    divider,
+                  ],
+                )),
           ].toMaxWidthSliver(),
           SliverFillRemaining(
             hasScrollBody: false,
@@ -81,36 +78,63 @@ class CareerPage extends StatelessWidget {
   }
 }
 
-class CareerWidget extends StatelessWidget {
-  final String text1;
-  final String text2;
-  final String text3;
-  final String text4;
-  const CareerWidget(
-      {super.key,
-      required this.text1,
-      required this.text2,
-      required this.text3,
-      required this.text4});
+class CareerItem {
+  final String title;
+  final String company;
+  final String period;
+  final String address;
+  CareerItem({
+    required this.title,
+    required this.company,
+    required this.period,
+    required this.address,
+  });
+}
+
+class CareerCard extends StatelessWidget {
+  final CareerItem item;
+  const CareerCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> details = [
+      item.title,
+      item.company,
+      item.period,
+      item.address
+    ];
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Icon(Icons.keyboard_arrow_right_outlined, color: Colors.amber),
+          const SizedBox(width: 4),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextBody(text: text1),
-              TextBody(text: text2),
-              TextBody(text: text3),
-              TextBody(text: text4),
-            ],
-          )
+            children: details.map((text) => TextBody(text: text)).toList(),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class CenterTitle extends StatelessWidget {
+  final String title;
+  const CenterTitle({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.center,
+      child: Container(
+        margin: marginBottom12,
+        child: Text(
+          title,
+          style: const TextStyle(fontSize: 20, color: Colors.amber),
+        ),
       ),
     );
   }
